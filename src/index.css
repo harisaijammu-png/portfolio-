@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #ffb703;
+  --color-brand-glow: rgba(255, 183, 3, 0.3);
+  --color-bg-deep: #0d0e11;
+  --color-card-bg: rgba(255, 255, 255, 0.02);
+  --color-card-border: rgba(255, 183, 3, 0.25);
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: var(--color-card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-card-border);
+  }
+  
+  .glow-border {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 10px var(--color-brand-glow);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px var(--color-brand-glow);
+  }
+  
+  .glow-btn {
+    box-shadow: 0 0 15px var(--color-brand-glow);
+    transition: all 0.3s ease;
+  }
+  
+  .glow-btn:hover {
+    box-shadow: 0 0 25px var(--color-brand), 0 0 50px var(--color-brand-glow);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+body {
+  background-color: var(--color-bg-deep);
+  color: #ffffff;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+html {
+  overflow: hidden;
+}
