@@ -11,9 +11,9 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="relative min-h-screen flex flex-col items-center justify-center py-24 overflow-hidden snap-center">
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center justify-center w-full">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center justify-center w-full scale-90 transform-origin-center">
         
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

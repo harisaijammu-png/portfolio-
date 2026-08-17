@@ -23,7 +23,6 @@ const Card3DWrapper = ({ index, activeIndex, children }) => {
   const variants = {
     active: {
       y: "0%",
-      scale: index === 0 ? 1 : 0.9,
       opacity: 1,
       zIndex: 10,
       pointerEvents: "auto",
@@ -31,7 +30,6 @@ const Card3DWrapper = ({ index, activeIndex, children }) => {
     },
     past: {
       y: "-50%",
-      scale: index === 0 ? 1 : 0.9,
       opacity: 0,
       zIndex: 0,
       pointerEvents: "none",
@@ -39,7 +37,6 @@ const Card3DWrapper = ({ index, activeIndex, children }) => {
     },
     future: {
       y: "50%",
-      scale: index === 0 ? 1 : 0.9,
       opacity: 0,
       zIndex: 20,
       pointerEvents: "none",
