@@ -40,7 +40,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section id="stats" className="relative min-h-screen flex items-center justify-center py-24 overflow-hidden snap-center">
+    <section id="stats" className="relative min-h-screen flex items-start justify-center pt-32 pb-24 md:pt-40 overflow-hidden snap-center">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -54,9 +54,6 @@ const StatsSection = () => {
             <div className="flex justify-between items-start mb-10 border-b border-white/5 pb-6">
               <div className="px-4 py-1.5 rounded-full border border-[var(--color-brand)]/40 bg-[var(--color-brand)]/10 text-[var(--color-brand)] text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_var(--color-brand-glow)]">
                 BY THE NUMBERS
-              </div>
-              <div className="text-5xl md:text-7xl font-black text-[var(--color-brand)]/20 leading-none select-none tracking-tighter">
-                04
               </div>
             </div>
 

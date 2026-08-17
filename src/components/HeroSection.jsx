@@ -78,82 +78,91 @@ const HeroSection = () => {
     },
   };
 
-  const skills = ["JAVA", "GRAILS", "JENKINS", "PYTHON", "AWS"];
-
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-start overflow-hidden pt-20 snap-center bg-black">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 snap-center bg-[#0a0a0a]">
       
-      {/* Full Background Video */}
-      <video 
-        ref={videoRef}
-        muted
-        playsInline
-        preload="auto"
-        disablePictureInPicture
-        controlsList="nodownload nofullscreen noremoteplayback"
-        className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
-        onTimeUpdate={(e) => {
-          const video = e.target;
-          // Pause 2.5 seconds before the end to avoid the baked-in zoom effect
-          if (video.duration && (video.duration - video.currentTime) < 2.5) {
-            video.pause();
-          }
-        }}
-      >
-        <source src="/avatar.mp4?v=5" type="video/mp4" />
-      </video>
-
-      {/* Particle overlay on top of video, behind text, faded out on the right so it doesn't cover the face */}
-      <div className="absolute inset-0 z-0 [mask-image:linear-gradient(to_right,white_40%,transparent_80%)] md:[mask-image:linear-gradient(to_right,white_30%,transparent_60%)]">
+      <div className="absolute inset-0 z-0 opacity-30">
         <ParticleBackground />
       </div>
-      
-      {/* Dark gradient overlay to ensure text readability on the left */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-0"></div>
 
-
-
-      <div className="w-full px-6 md:px-12 lg:px-24 relative z-10 flex justify-start">
+      <div className="w-full max-w-[100rem] mx-auto px-6 md:px-12 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-16 xl:gap-24 items-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="flex flex-col items-start space-y-6 max-w-xl xl:max-w-2xl"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border glow-border glass-panel">
+          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-[var(--color-brand)]/30 bg-[var(--color-brand)]/10 backdrop-blur-sm mb-2">
             <span className="w-2 h-2 rounded-full bg-[var(--color-brand)] animate-pulse shadow-[0_0_8px_var(--color-brand)]"></span>
-            <span className="text-sm font-medium tracking-wider text-[var(--color-brand)] uppercase">OPEN TO WORK</span>
+            <span className="text-xs font-bold tracking-wider text-[var(--color-brand)] uppercase">OPEN TO WORK</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] font-black tracking-tighter text-white leading-[1.1] uppercase drop-shadow-lg">
-            THATIKONDA<br />KALYANKUMAR
-          </motion.h1>
-
-          <motion.div variants={itemVariants} className="h-6">
-            <Typewriter text="Software Engineer • Full Stack Developer" delay={1} />
+          <motion.div variants={itemVariants} className="flex flex-col items-start w-full">
+            <h2 className="text-xl md:text-2xl text-gray-300 font-medium mb-1">Hi, I'm</h2>
+            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.5rem] font-black tracking-tighter leading-[1.05] uppercase drop-shadow-xl">
+              <span className="text-white block">THATIKONDA</span>
+              <span className="text-[var(--color-brand)] block">KALYANKUMAR</span>
+            </h1>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 pt-4">
-            {skills.map((skill, index) => (
-              <span key={index} className="px-5 py-2 rounded-full text-xs font-bold tracking-widest bg-black/40 border border-white/20 hover:border-[var(--color-brand)] hover:text-[var(--color-brand)] transition-colors duration-300 backdrop-blur-md cursor-default text-gray-300 uppercase">
-                {skill}
+          <motion.div variants={itemVariants} className="h-6 mt-4 text-sm md:text-base font-semibold tracking-wider text-gray-400">
+            <Typewriter text="SOFTWARE ENGINEER • FULL STACK DEVELOPER" delay={1} />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="mt-6 flex flex-col sm:flex-row gap-4">
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                window.dispatchEvent(new CustomEvent('navigateToSection', { detail: 4 }));
+              }}
+              className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-black/50 border border-[var(--color-brand)]/50 text-white font-medium glow-btn overflow-hidden relative group backdrop-blur-md"
+            >
+              <span className="relative z-10 flex items-center tracking-widest text-sm uppercase">
+                VIEW ACADEMIC PROJECT <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-            ))}
-          </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
 
-          <motion.button 
-            variants={itemVariants}
-            onClick={(e) => {
-              e.stopPropagation();
-              window.dispatchEvent(new CustomEvent('navigateToSection', { detail: 4 }));
-            }}
-            className="mt-6 inline-flex items-center space-x-2 px-8 py-4 rounded-full bg-black/50 border border-[var(--color-brand)]/50 text-white font-medium glow-btn overflow-hidden relative group backdrop-blur-md"
-          >
-            <span className="relative z-10 flex items-center tracking-widest text-sm uppercase">
-              VIEW ACADEMIC PROJECT <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </motion.button>
+            <a 
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-black/50 border border-[var(--color-brand)]/50 text-white font-medium glow-btn overflow-hidden relative group backdrop-blur-md"
+            >
+              <span className="relative z-10 flex items-center tracking-widest text-sm uppercase">
+                VIEW RESUME <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-center md:justify-end mt-10 md:mt-0"
+        >
+          <div className="relative w-full max-w-lg md:max-w-xl aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-white/5 shadow-2xl glass-panel">
+            <video 
+              ref={videoRef}
+              muted
+              playsInline
+              preload="auto"
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
+              className="w-full h-full object-cover object-center pointer-events-none select-none"
+              onTimeUpdate={(e) => {
+                const video = e.target;
+                if (video.duration && (video.duration - video.currentTime) < 2.5) {
+                  video.pause();
+                }
+              }}
+            >
+              <source src="/avatar.mp4?v=5" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60"></div>
+          </div>
         </motion.div>
       </div>
     </section>

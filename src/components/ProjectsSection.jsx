@@ -19,19 +19,16 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="relative min-h-screen flex items-center justify-center py-24 overflow-hidden snap-center">
-      {/* Background Number */}
-      <div className="absolute left-[-5%] top-[10%] text-[40vh] font-black text-white/[0.02] select-none pointer-events-none tracking-tighter z-0">
-        04
-      </div>
+    <section id="projects" className="relative min-h-screen flex items-start justify-center pt-32 pb-24 md:pt-40 overflow-hidden snap-center">
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 -translate-y-6 md:-translate-y-10">
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="mb-10 flex items-center space-x-4"
+          className="mb-10 flex items-center space-x-4 max-w-5xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight glow-text">Academic Project</h2>
           <div className="h-[1px] flex-grow bg-gradient-to-r from-[var(--color-brand)]/50 to-transparent"></div>

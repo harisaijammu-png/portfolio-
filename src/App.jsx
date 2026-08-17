@@ -5,13 +5,15 @@ import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
 import EducationSection from './components/EducationSection';
 import ProjectsSection from './components/ProjectsSection';
+import ContactSection from './components/ContactSection';
 
 const sections = [
-  { id: 'hero', label: 'Intro', component: <HeroSection /> },
-  { id: 'about', label: 'Who I Am', component: <AboutSection /> },
-  { id: 'skills', label: 'Technical Skills', component: <SkillsSection /> },
+  { id: 'hero', label: 'Home', component: <HeroSection /> },
+  { id: 'about', label: 'About', component: <AboutSection /> },
+  { id: 'skills', label: 'Skills', component: <SkillsSection /> },
   { id: 'education', label: 'Education', component: <EducationSection /> },
-  { id: 'projects', label: 'Academic Project', component: <ProjectsSection /> }
+  { id: 'projects', label: 'Project', component: <ProjectsSection /> },
+  { id: 'contact', label: 'Contact', component: <ContactSection /> }
 ];
 
 const Card3DWrapper = ({ index, activeIndex, children }) => {
@@ -21,33 +23,24 @@ const Card3DWrapper = ({ index, activeIndex, children }) => {
   const variants = {
     active: {
       y: "0%",
-      scale: 1,
-      rotateX: 0,
-      translateZ: 0,
       opacity: 1,
       zIndex: 10,
       pointerEvents: "auto",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
     },
     past: {
-      y: "-20%",
-      scale: 0.85,
-      rotateX: -10,
-      translateZ: -200,
+      y: "-50%",
       opacity: 0,
       zIndex: 0,
       pointerEvents: "none",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
     },
     future: {
-      y: "100%",
-      scale: 1,
-      rotateX: 0,
-      translateZ: 0,
-      opacity: 1,
+      y: "50%",
+      opacity: 0,
       zIndex: 20,
       pointerEvents: "none",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
     }
   };
 
@@ -155,24 +148,26 @@ function App() {
   return (
     <div className="fixed inset-0 bg-[var(--color-bg-deep)] text-white font-sans selection:bg-[var(--color-brand)]/30 selection:text-white overflow-hidden">
       
-      <nav className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 px-2 py-2 rounded-full bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 shadow-2xl overflow-x-auto max-w-[95vw] hide-scrollbar">
         {sections.map((section, idx) => (
           <button
             key={section.id}
             onClick={() => setActiveIndex(idx)}
-            className="group relative flex items-center justify-end"
+            className={`relative px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-colors duration-300 ${
+              activeIndex === idx 
+                ? 'text-[var(--color-brand)]' 
+                : 'text-gray-400 hover:text-white'
+            }`}
             aria-label={`Go to ${section.label}`}
           >
-            <span className={`absolute right-8 px-2 py-1 rounded bg-white/10 backdrop-blur-sm text-xs font-medium border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap ${activeIndex === idx ? 'text-[var(--color-brand)] border-[var(--color-brand)]/50' : 'text-white/70'}`}>
-              {section.label}
-            </span>
-            <div 
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeIndex === idx 
-                  ? 'bg-[var(--color-brand)] scale-125 shadow-[0_0_10px_var(--color-brand-glow)]' 
-                  : 'bg-white/20 hover:bg-white/50'
-              }`}
-            />
+            {activeIndex === idx && (
+              <motion.div
+                layoutId="activeTab"
+                className="absolute inset-0 bg-[var(--color-brand)]/10 border border-[var(--color-brand)]/30 rounded-full"
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              />
+            )}
+            <span className="relative z-10">{section.label}</span>
           </button>
         ))}
       </nav>
