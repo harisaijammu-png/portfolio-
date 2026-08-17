@@ -7,7 +7,7 @@ const skillCategories = [
   { title: "UI Architecture & Patterns", skills: ["Single Page Applications (SPA)", "Component-Based Architecture", "Lazy Loading", "Route Guards", "Reactive Forms", "Custom Directives & Pipes"] },
   { title: "API & Integration", skills: ["RESTful APIs", "Swagger/OpenAPI", "HTTP Client Integration", "JSON"] },
   { title: "Backend Technologies", skills: ["Java 8/11/17", "Spring Boot", "Spring MVC", "Spring Security", "JPA/Hibernate", "REST APIs"] },
-  { title: "Testing Frameworks", skills: ["Jasmine", "Karma", "Selenium", "Postman"] },
+  { title: "Testing Frameworks", skills: ["Jasmine", "Karma", "Selenium (UI automation support)", "Postman (API validation)"] },
   { title: "Databases", skills: ["PostgreSQL", "MySQL", "Oracle", "MongoDB", "Cassandra"] },
   { title: "Cloud & Deployment", skills: ["AWS", "GCP", "Azure"] },
   { title: "DevOps & CI/CD", skills: ["Jenkins", "GitHub Actions", "GitLab CI", "Angular CLI", "NPM"] },
@@ -54,6 +54,7 @@ const SkillsSection = () => {
                 </div>
               ))}
             </div>
+
           </div>
         </motion.div>
       </div>
