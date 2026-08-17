@@ -14,7 +14,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-10 flex items-center space-x-4 max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight glow-text">About</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">About</h2>
           <div className="h-[1px] flex-grow bg-gradient-to-r from-[var(--color-brand)]/50 to-transparent"></div>
         </motion.div>
 
@@ -27,11 +27,11 @@ const AboutSection = () => {
         >
 
 
-          <div className="glass-panel p-8 md:p-12 rounded-3xl relative group border-[var(--color-card-border)] bg-black/40 shadow-[inset_0_0_20px_rgba(255,183,3,0.05)]">
+          <div className="glass-panel p-8 md:p-12 rounded-3xl relative group border-[var(--color-card-border)] bg-slate-900/40">
 
-            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+            <div className="space-y-6 text-lg md:text-xl text-slate-400 leading-relaxed font-light">
               <p>
-                I'm a Java Full Stack Developer with <strong className="text-[var(--color-brand)] glow-text font-bold">3+ years</strong> of hands-on experience delivering enterprise-scale, cloud-ready applications using <span className="text-[var(--color-brand)] font-medium glow-text">Java</span>, <span className="text-[var(--color-brand)] font-medium glow-text">Spring Boot</span>, and <span className="text-[var(--color-brand)] font-medium glow-text">Angular</span>.
+                I'm a Java Full Stack Developer with <strong className="text-[var(--color-brand)] font-bold">3+ years</strong> of hands-on experience delivering enterprise-scale, cloud-ready applications using <span className="text-[var(--color-brand)] font-medium">Java</span>, <span className="text-[var(--color-brand)] font-medium">Spring Boot</span>, and <span className="text-[var(--color-brand)] font-medium">Angular</span>.
               </p>
               <p>
                 Proven expertise in designing RESTful microservices, building high-performance SPAs, and implementing secure, scalable backend systems.
@@ -44,7 +44,7 @@ const AboutSection = () => {
             {/* Key Tags */}
             <div className="mt-10 flex flex-wrap gap-3">
               {['FULL STACK', 'CLOUD NATIVE', 'CI/CD AUTOMATION', 'MICROSERVICES', 'PROBLEM SOLVING'].map((tag, idx) => (
-                <span key={idx} className="px-3 py-1 text-xs font-bold tracking-widest border border-gray-600 rounded-full text-gray-400 hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors duration-300">
+                <span key={idx} className="px-3 py-1 text-xs font-bold tracking-widest border border-slate-700 bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 hover:text-white transition-colors duration-300">
                   {tag}
                 </span>
               ))}

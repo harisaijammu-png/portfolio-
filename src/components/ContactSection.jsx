@@ -21,7 +21,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-10 flex items-center space-x-4 w-full"
           >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight glow-text">Contact</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Contact</h2>
             <div className="h-[1px] flex-grow bg-gradient-to-r from-[var(--color-brand)]/50 to-transparent"></div>
           </motion.div>
 
@@ -32,10 +32,10 @@ const ContactSection = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="w-full"
           >
-          <div className="glass-panel p-5 md:p-8 rounded-3xl relative group border-[var(--color-card-border)] bg-[#0a0a0a]/80 shadow-[inset_0_0_20px_rgba(255,183,3,0.05)]">
+          <div className="glass-panel p-5 md:p-8 rounded-3xl relative group border-[var(--color-card-border)] bg-slate-900/40">
             
             {/* Top pill inside the box matching the image */}
-            <div className="inline-flex px-4 py-1.5 rounded-full border border-[var(--color-brand)]/40 bg-[var(--color-brand)]/10 text-[var(--color-brand)] text-xs font-bold tracking-widest uppercase mb-6 shadow-[0_0_10px_var(--color-brand-glow)]">
+            <div className="inline-flex px-4 py-1.5 rounded-full border border-[var(--color-brand)]/40 bg-[var(--color-brand)]/10 text-[var(--color-brand)] text-xs font-bold tracking-widest uppercase mb-6">
               CONTACT DETAILS
             </div>
 
@@ -45,7 +45,7 @@ const ContactSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 md:gap-6">
               
               {/* Left Column: Contact Info */}
-              <div className="bg-[#111111]/50 border border-white/5 rounded-2xl p-5 flex flex-col h-full">
+              <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5 flex flex-col h-full">
                 <h4 className="text-lg font-bold text-white mb-6">Contact Info</h4>
                 
                 <div className="space-y-6 flex-grow">
@@ -80,7 +80,7 @@ const ContactSection = () => {
               </div>
 
               {/* Right Column: Form */}
-              <div className="bg-[#111111]/50 border border-white/5 rounded-2xl p-5 flex flex-col h-full">
+              <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5 flex flex-col h-full">
                 <form onSubmit={handleSubmit} className="space-y-4 flex flex-col h-full">
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
@@ -130,7 +130,7 @@ const ContactSection = () => {
 
                   <button 
                     type="submit"
-                    className="w-full mt-4 bg-[var(--color-brand)] text-black font-bold py-3 rounded-xl flex items-center justify-center space-x-2 hover:bg-[var(--color-brand)]/90 transition-colors shadow-[0_0_15px_var(--color-brand-glow)] text-sm"
+                    className="w-full mt-4 bg-[var(--color-brand)] text-slate-950 font-bold py-3 rounded-xl flex items-center justify-center space-x-2 hover:brightness-110 transition-colors shadow-lg shadow-black/20 text-sm"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Message</span>

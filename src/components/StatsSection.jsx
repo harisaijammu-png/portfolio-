@@ -25,7 +25,7 @@ const AnimatedCounter = ({ value, suffix = "", decimal = false }) => {
   });
 
   return (
-    <motion.span ref={ref} className="text-4xl md:text-6xl font-black text-[var(--color-brand)] glow-text inline-block tracking-tighter">
+    <motion.span ref={ref} className="text-4xl md:text-6xl font-black text-[var(--color-brand)] inline-block tracking-tighter">
       {displayValue}
     </motion.span>
   );
@@ -49,10 +49,10 @@ const StatsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-5xl mx-auto"
         >
-          <div className="glass-panel p-8 md:p-12 rounded-3xl relative group border-[var(--color-card-border)] bg-black/40 shadow-[inset_0_0_20px_rgba(255,183,3,0.05)]">
+          <div className="glass-panel p-8 md:p-12 rounded-3xl relative group border-[var(--color-card-border)] bg-slate-900/40">
             {/* Header Layout */}
             <div className="flex justify-between items-start mb-10 border-b border-white/5 pb-6">
-              <div className="px-4 py-1.5 rounded-full border border-[var(--color-brand)]/40 bg-[var(--color-brand)]/10 text-[var(--color-brand)] text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_var(--color-brand-glow)]">
+              <div className="px-4 py-1.5 rounded-full border border-[var(--color-brand)]/40 bg-[var(--color-brand)]/10 text-[var(--color-brand)] text-xs font-bold tracking-widest uppercase">
                 BY THE NUMBERS
               </div>
             </div>

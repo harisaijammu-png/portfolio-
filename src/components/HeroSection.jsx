@@ -93,7 +93,7 @@ const HeroSection = () => {
           className="flex flex-col items-start space-y-6 max-w-xl xl:max-w-2xl"
         >
           <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-[var(--color-brand)]/30 bg-[var(--color-brand)]/10 backdrop-blur-sm mb-2">
-            <span className="w-2 h-2 rounded-full bg-[var(--color-brand)] animate-pulse shadow-[0_0_8px_var(--color-brand)]"></span>
+            <span className="w-2 h-2 rounded-full bg-[var(--color-brand)] animate-pulse"></span>
             <span className="text-xs font-bold tracking-wider text-[var(--color-brand)] uppercase">OPEN TO WORK</span>
           </motion.div>
 
@@ -115,24 +115,22 @@ const HeroSection = () => {
                 e.stopPropagation();
                 window.dispatchEvent(new CustomEvent('navigateToSection', { detail: 4 }));
               }}
-              className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-black/50 border border-[var(--color-brand)]/50 text-white font-medium glow-btn overflow-hidden relative group backdrop-blur-md"
+              className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-[var(--color-brand)] text-slate-950 font-bold hover:brightness-110 transition-colors shadow-lg shadow-black/20 group"
             >
               <span className="relative z-10 flex items-center tracking-widest text-sm uppercase">
                 VIEW ACADEMIC PROJECT <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
 
             <a 
               href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-black/50 border border-[var(--color-brand)]/50 text-white font-medium glow-btn overflow-hidden relative group backdrop-blur-md"
+              className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-[var(--color-brand)] text-slate-950 font-bold hover:brightness-110 transition-colors shadow-lg shadow-black/20 group"
             >
               <span className="relative z-10 flex items-center tracking-widest text-sm uppercase">
                 VIEW RESUME <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </motion.div>
         </motion.div>
